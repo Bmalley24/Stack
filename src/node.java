@@ -7,7 +7,6 @@
 
 public class node<T, E> {
     private node parentNode;
-    private node childNode;
 
     private T value;
     private E eValue;
@@ -16,20 +15,17 @@ public class node<T, E> {
 
     public node() {//Empty Consructor
         parentNode = null;
-        childNode = null;
         value = null;
 
     }
     public node(T data){ // 1 input Constructor
         value = data;
         parentNode = null;
-        childNode = null;
 
     }
 
-    public node(T data, node node1, node node2) { // 3 inputConstructor
+    public node(T data, node node1) { // 2 inputConstructor
         parentNode = node1;
-        childNode = node2;
         value = data;
     }
 
@@ -39,10 +35,6 @@ public class node<T, E> {
         return parentNode;
     }
 
-    public node getChildNode() {
-        return childNode;
-    }
-
     public T getValue() {
         return value;
     }
@@ -50,9 +42,6 @@ public class node<T, E> {
     //Mutators
     public void setParentNode(node newNode){
         parentNode = (newNode);
-    }
-    public void setChildNode(node newNode){
-        childNode = (newNode);
     }
     public void setValue(T newValue){
         value = (newValue);

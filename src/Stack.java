@@ -6,6 +6,7 @@
  **/
 
 public class Stack<T, E> {
+
     //instance data
     private node topValue;
     private int size;
@@ -19,22 +20,21 @@ public class Stack<T, E> {
     //Methods
 
     //add an element
-    public void push(E element){
-        node newValue = new node(element);
-        topValue.setChildNode(topValue);
-        topValue.setValue(newValue);
+    public void push(E element) {
+        node newValue = new node(element, topValue);
+        topValue = newValue;
         size++;
     }
 
     //remove and return the top element
     public T pop() {
         node newValue = topValue;
-        topValue = topValue.getChildNode();
+        topValue = topValue.getParentNode();
         size = size - 1;
         return (T) newValue.getValue();
     }
 
-
+    //checks if the Stack has any values
     public boolean isEmpty(){
         if (size == 0) {
             return true;
@@ -43,7 +43,7 @@ public class Stack<T, E> {
         }
     }
 
-
+    //checks how many values are currently in  stack
     public int size(){
         return size;
     }
